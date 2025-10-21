@@ -1,39 +1,50 @@
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
-
 [tool.poetry]
 name = "vpt-segmentation-packing"
 version = "0.1.0"
 description = "A package for packing and processing VPT segmentation data"
-readme = "README.md"
-authors = ["IMCF <your.email@example.com>"]
 license = "MIT"
-keywords = ["segmentation", "packing", "vpt", "visualization"]
-homepage = "https://github.com/imcf/vpt-segmentation-packing"
+authors = ["Vizgen <techsupport@vizgen.com>, IMCF"]
+maintainers = [
+    "Timothy Wiggin <timothy.wiggin@vizgen.com>",
+    "IMCF <imcf@unibas.ch>",
+]
+readme = "README.md"
 repository = "https://github.com/imcf/vpt-segmentation-packing"
+documentation = "https://github.com/imcf/vpt-segmentation-packing"
+keywords = ["segmentation", "packing", "vpt", "visualization"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Science/Research",
-    "Programming Language :: Python :: 3",
+    "Natural Language :: English",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Image Processing",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
 ]
-packages = [{ include = ".", from = "." }]
+packages = [{ include = "vpt_segmentation_packing" }]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=3.9,<3.13"
 numpy = ">=1.20.0"
 pandas = ">=1.3.0"
 shapely = ">=1.8.0"
 pyarrow = ">=6.0.0"
 
 [tool.poetry.group.dev.dependencies]
-pytest = ">=7.0.0"
+pytest = "^7.2.0"
+pytest-cov = "^4.0.0"
 ruff = ">=0.1.0"
-mypy = ">=1.0.0"
+mypy = "^1.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
 
 [tool.ruff]
 line-length = 100
